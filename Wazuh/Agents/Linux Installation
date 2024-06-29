@@ -1,0 +1,23 @@
+# Deploy Wazuh Agent on AWS Linux Endpoint
+
+## Official Documentation:
+https://documentation.wazuh.com/current/installation-guide/wazuh-agent/wazuh-agent-package-linux.html
+
+### Information Prerequisite:
+- Wazuh Manager IP address
+
+### Add the Wazuh Repository
+
+Elevate to super user privileges:
+`sudo su`
+
+Import the GPG key:
+curl -s https://packages.wazuh.com/key/GPG-KEY-WAZUH | gpg --no-default-keyring --keyring gnupg-ring:/usr/share/keyrings/wazuh.gpg --import && chmod 644 /usr/share/keyrings/wazuh.gpg
+
+Add the Repository: 
+echo "deb [signed-by=/usr/share/keyrings/wazuh.gpg] https://packages.wazuh.com/4.x/apt/ stable main" | tee -a /etc/apt/sources.list.d/wazuh.list
+
+Update the package information:
+apt-get update
+
+### Deploy the Wazuh Agent
