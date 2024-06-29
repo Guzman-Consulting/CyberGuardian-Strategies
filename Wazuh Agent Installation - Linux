@@ -1,0 +1,12 @@
+# Agent Installation On AWS Linux Machine
+
+## Official Documentation: 
+https://documentation.wazuh.com/current/installation-guide/wazuh-agent/wazuh-agent-package-linux.html
+
+### Add the Wazuh Repoistory 
+
+Elevate to root privilages
+
+'''
+sudo su
+'''
